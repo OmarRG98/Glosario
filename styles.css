@@ -1,0 +1,73 @@
+.header {
+    display: flex; /* Activa el modelo de flexbox */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    gap: 10px; /* Espaciado entre el título y la imagen */
+}
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+    background-color: #f9e5e5; /* Fondo rosa muy tenue */
+    font-family: Arial, sans-serif;
+}
+
+.header img {
+    max-width: 100%; /* La imagen no excederá el ancho de su contenedor */
+    max-height: 50px; /* Limita la altura máxima de la imagen */
+    object-fit: contain; /* Ajusta la imagen para que no se deforme */
+    margin: 10px 0; /* Espaciado alrededor de la imagen */
+}
+
+/* Contenedor de las columnas con CSS Grid */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste automático de columnas */
+    gap: 20px;
+    padding: 20px;
+    align-items: start;
+}
+
+/* Estilo de las columnas */
+.column {
+    background-color: #f6d7d7; /* Rosa pastel */
+    padding: 20px;
+    border-radius: 8px;
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+/* Estilo de las listas dentro de las columnas */
+.column ul {
+    list-style-type: none; /* Eliminamos las viñetas predeterminadas */
+}
+
+/* Estilo de cada elemento de lista */
+.column li {
+    margin-bottom: 10px;
+    display: flex; /* Flex para alinear los elementos en línea */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permite que el texto se ajuste si es necesario */
+}
+
+/* Estilo del texto */
+.texto-normal {
+    max-width: calc(100% - 30px); /* Asegura que el texto no se desborde */
+    word-wrap: break-word;
+    white-space: normal; /* Permite que el texto se divida en varias líneas */
+}
+
+/* Punto rojo (antes viñeta) */
+.viñeta {
+    display: inline-block; /* Permite personalizar el punto como un elemento en línea */
+    width: 10px; /* Ancho del punto */
+    height: 10px; /* Alto del punto */
+    background-color: red; /* Color del punto */
+    border-radius: 50%; /* Hace que la viñeta sea un círculo */
+    margin-right: 10px; /* Espacio entre la viñeta y el texto */
+    flex-shrink: 0; /* Evita que las viñetas se reduzcan si el contenedor es pequeño */
+}
